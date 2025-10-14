@@ -42,11 +42,11 @@ public class Main {
       double totalAmount = 0.0;
 
       System.out.println("Enter total amount (you can include R if you want): ");
-      String amountInput = sc.nextLine();
+      String totalAmountInput = sc.nextLine();
 
       try {
-        amountInput = amountInput.replaceAll("[^0-9.]", "");
-        totalAmount = Double.parseDouble(amountInput);
+        totalAmountInput = totalAmountInput.replaceAll("[^0-9.]", "");
+        totalAmount = Double.parseDouble(totalAmountInput);
 
         System.out.println("Enter any special instructions (or type 'None'): ");
         String specialInstructions = sc.nextLine();
@@ -73,7 +73,7 @@ public class Main {
 
       // 3️⃣ Read drivers.txt and assign driver safely
       Driver assignedDriver = null;
-      int leastLoad = Integer.MAX_VALUE;
+      int minimumDriverLoad = Integer.MAX_VALUE;
 
       try (BufferedReader br = new BufferedReader(new FileReader("drivers.txt"))) {
         String line;
@@ -95,9 +95,9 @@ public class Main {
             continue;
           }
 
-          if (driverCity.equalsIgnoreCase(restaurantCity) && driverLoad < leastLoad) {
+          if (driverCity.equalsIgnoreCase(restaurantCity) && driverLoad < minimumDriverLoad) {
             assignedDriver = new Driver(driverName, driverCity, driverLoad);
-            leastLoad = driverLoad;
+            minimumDriverLoad = driverLoad;
           }
         }
 
