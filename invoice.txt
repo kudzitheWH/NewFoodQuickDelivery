@@ -1,0 +1,26 @@
+----- QUICK FOOD INVOICE -----
+Order Number: 1234
+
+----- Customer Details -----
+Name: k
+Address: 20 falls road
+City: Cape Town
+Phone Number: 0718894734
+Email: kadyakj@gmail.com
+Order Details: 1 x Pepperoni
+Total Amount: R90.0
+Special Instructions: None
+
+----- Restaurant Details -----
+Name: Pizza Palace
+City: Cape Town
+Phone Number: 088456789
+
+Order Details: 1 x Pepperoni
+Total Amount: R90.0
+Special Instructions: None
+
+Miranda Metcalfe is nearest to the restaurant and will deliver your order to:
+20 falls road
+
+If you need to contact the restaurant, call: 088456789
