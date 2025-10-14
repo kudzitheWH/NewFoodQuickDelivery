@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Order {
+  // Constants to improve readability
+  private static final String INVOICE_FILE = "invoice.txt";
+  private static final String HEADER = "----- QUICK FOOD INVOICE -----";
+  private static final String SEPARATOR = "------------------------------";
+  private static final String THANK_YOU_MESSAGE = "Thank you for choosing Quick Food!";
 
   // Attributes
   private Customer customer;
@@ -23,14 +28,14 @@ public class Order {
 
   // Method to generate invoice file
   public void generateInvoice() {
-    try (PrintWriter out = new PrintWriter(new FileWriter("invoice.txt"))) {
+    try (PrintWriter out = new PrintWriter(new FileWriter(INVOICE_FILE))) {
 
       if (customer == null || restaurant == null) {
         System.out.println("⚠️ Missing order details. Invoice not created.");
         return;
       }
 
-      out.println("----- QUICK FOOD INVOICE -----");
+      out.println(HEADER);
       out.println("Order Number: " + orderNumber);
       out.println();
       out.println(customer.toString());
@@ -39,6 +44,8 @@ public class Order {
       out.println("Total Amount: R" + customer.getTotalAmount());
       out.println("Special Instructions: " + customer.getSpecialInstructions());
       out.println();
+      out.println(SEPARATOR);
+      out.println(THANK_YOU_MESSAGE);
 
       if (driver != null) {
         out.println(driver.getName() + " is nearest to the restaurant and will deliver your order to:");
